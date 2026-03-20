@@ -3,7 +3,7 @@ builder = "DOCKERFILE"
 dockerfilePath = "docker/selfhosted.Dockerfile"
 
 [deploy]
-startCommand = "chmod +x /app/bin/* && /app/bin/docker_start"
+startCommand = "mkdir -p /data/config/db /data/config/logs /data/config/metadata /data/config/extras /data/downloads && chmod +x /app/bin/* && /app/bin/docker_start"
 healthcheckPath = "/healthcheck"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
